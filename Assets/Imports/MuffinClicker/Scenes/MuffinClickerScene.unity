@@ -319,6 +319,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7f3f54e3af6144d98235e128a2ecd62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _muffinsPerClick: 1
+  _totalMuffinsText: {fileID: 1710630146}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1179,7 +1181,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -171.0094, y: -2.1172}
+  m_AnchoredPosition: {x: -171.0094, y: -2.1171875}
   m_SizeDelta: {x: 129.7906, y: 47.8828}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1596206165
@@ -1504,7 +1506,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -1532,6 +1534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56196564752e04050899af2cfd4766b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _volumeSlider: {fileID: 1645876284}
 --- !u!1 &1705359028
 GameObject:
   m_ObjectHideFlags: 0
