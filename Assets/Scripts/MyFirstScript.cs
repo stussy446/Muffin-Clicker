@@ -10,23 +10,29 @@ public class MyFirstScript : MonoBehaviour
     [SerializeField] private int _muffinsPerClick = 1;
     [SerializeField] private TextMeshProUGUI _totalMuffinsText;
 
-    // Start is called before the first frame update
     void Start()
     {
         Debug.Log("hello world");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        UpdateTotalMuffins();
     }
 
     public void OnMuffinClicked()
     {
         _counter += _muffinsPerClick;
-        _totalMuffinsText.text = _counter.ToString();
+        UpdateTotalMuffins();
         Debug.Log(_counter);
+    }
+
+    private void UpdateTotalMuffins()
+    {
+        if (_counter == 1)
+        {
+            _totalMuffinsText.text = _counter.ToString() + " Muffin";
+        }
+        else
+        {
+            _totalMuffinsText.text = _counter.ToString() + " Muffins";
+        }
     }
 }
 

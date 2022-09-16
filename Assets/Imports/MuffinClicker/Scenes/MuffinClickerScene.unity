@@ -1652,7 +1652,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Total Muffins
+  m_text: 0 Muffins
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 30066e0c22c1e764f86b13ec007f91db, type: 2}
   m_sharedMaterial: {fileID: -37409773972805693, guid: 30066e0c22c1e764f86b13ec007f91db, type: 2}
