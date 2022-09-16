@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MyFirstScript : MonoBehaviour
 {
+    private int _counter = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +16,12 @@ public class MyFirstScript : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void OnMuffinClicked()
+    {
+        _counter++;
+        Debug.Log(_counter);
     }
 }
 
