@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class VolumeController : MonoBehaviour
 {
-    private void OnVolumeChanged()
+    public void OnVolumeChanged()
     {
-
+        Debug.Log("volume slider changed");
     }
 }
