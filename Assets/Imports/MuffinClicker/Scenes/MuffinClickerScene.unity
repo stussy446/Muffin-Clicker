@@ -319,6 +319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7f3f54e3af6144d98235e128a2ecd62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _criticalPercentChance: 1
   _muffinsPerClick: 1
   _totalMuffinsText: {fileID: 1710630146}
 --- !u!1 &519420028
