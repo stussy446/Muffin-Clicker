@@ -148,7 +148,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 28660336}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -319,9 +319,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7f3f54e3af6144d98235e128a2ecd62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _criticalPercentChance: 1
   _muffinsPerClick: 1
+  _criticalPercentChance: 1
   _totalMuffinsText: {fileID: 1710630146}
+  _spinLights:
+  - {fileID: 1594047314}
+  - {fileID: 28660337}
+  _spinSpeed: 360
+  _sinDistance: 0.27
+  _sinSpeed: 5.32
+  _waveOffset: 1.31
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1457,7 +1464,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -4.200012, y: -11.799988}
+  m_AnchoredPosition: {x: -4.199951, y: -11.800049}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1645876284
