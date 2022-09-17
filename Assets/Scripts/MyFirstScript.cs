@@ -7,8 +7,8 @@ public class MyFirstScript : MonoBehaviour
 {
     private int _counter = 0;
 
-    [SerializeField] private int _criticalPercentChance = 1;
     [SerializeField] private int _muffinsPerClick = 1;
+    [Range(0, 100)][SerializeField] private int _criticalPercentChance = 1;
     [SerializeField] private TextMeshProUGUI _totalMuffinsText;
 
     void Start()
