@@ -320,8 +320,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _muffinsPerClick: 1
-  _criticalPercentChance: 0
+  _criticalPercentChance: 1
   _totalMuffinsText: {fileID: 1710630146}
+  _spinLight1: {fileID: 1594047314}
+  _spinLight2: {fileID: 28660337}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1457,7 +1459,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -4.200012, y: -11.799988}
+  m_AnchoredPosition: {x: -4.199951, y: -11.800049}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1645876284
