@@ -6,12 +6,12 @@ using TMPro;
 public class MyFirstScript : MonoBehaviour
 {
     private int _counter = 0;
+    private float[] _spinSpeeds = new float[2]; // use a list in real world situation
 
     [SerializeField] private int _muffinsPerClick = 1;
     [Range(0, 100)][SerializeField] private int _criticalPercentChance = 1;
     [SerializeField] private TextMeshProUGUI _totalMuffinsText;
-    [SerializeField] private Transform _spinLight1, _spinLight2;
-    [SerializeField] private float _spinSpeed = 360f;
+    [SerializeField] private Transform[] _spinLights;
     [SerializeField] private float _sinDistance = 1f;
     [SerializeField] private float _sinSpeed = 1f;
     [SerializeField] private float _waveOffset = 0f;
@@ -19,17 +19,24 @@ public class MyFirstScript : MonoBehaviour
     void Start()
     {
         UpdateTotalMuffins();
+        SetSpinSpeeds();
+    }
+
+    private void SetSpinSpeeds()
+    {
+        for (int i = 0; i < _spinSpeeds.Length; i++)
+        {
+            _spinSpeeds[i] = Random.Range(1, 360);
+        }
     }
 
     private void Update()
     {
-        Vector3 rotation = new Vector3();
-        rotation.z = _spinSpeed * Time.deltaTime;
-        _spinLight1.Rotate(rotation);
-        _spinLight2.Rotate(rotation);
-        PulseSpinLight(_spinLight1);
-        PulseSpinLight(_spinLight2);
-
+        for (int i = 0; i < _spinLights.Length; i++)
+        {
+            RotateLight(_spinLights[i], _spinSpeeds[i]);
+            PulseSpinLight(_spinLights[i]);
+        }
 
     }
 
@@ -74,10 +81,16 @@ public class MyFirstScript : MonoBehaviour
         }
     }
 
-    void PulseSpinLight(Transform spinLight)
+    private void RotateLight(Transform _spinLight, float _spinSpeed)
+    {
+        Vector3 rotation = new Vector3(0, 0, _spinSpeed * Time.deltaTime);
+        _spinLight.Rotate(rotation);
+    }
+
+    private void PulseSpinLight(Transform _spinLight)
     {
         float sin = (Mathf.Sin(Time.time * _sinSpeed) * _sinDistance) + _waveOffset;
-        spinLight.transform.localScale = new Vector3(sin, sin, 0f);
+        _spinLight.transform.localScale = new Vector3(sin, sin, 0f);
     }
 }
 
