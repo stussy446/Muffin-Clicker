@@ -6,7 +6,7 @@ using TMPro;
 public class MyFirstScript : MonoBehaviour
 {
     private int _counter = 0;
-    private float[] _spinSpeeds = new float[2]; // use a list in real world situation
+    private float[] _spinSpeeds;
 
     [SerializeField] private int _muffinsPerClick = 1;
     [Range(0, 100)][SerializeField] private int _criticalPercentChance = 1;
@@ -19,6 +19,7 @@ public class MyFirstScript : MonoBehaviour
     void Start()
     {
         UpdateTotalMuffins();
+        _spinSpeeds = new float[_spinLights.Length];
         SetSpinSpeeds();
     }
 
