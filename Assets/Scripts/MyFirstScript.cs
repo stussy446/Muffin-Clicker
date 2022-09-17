@@ -19,16 +19,7 @@ public class MyFirstScript : MonoBehaviour
     void Start()
     {
         UpdateTotalMuffins();
-        _spinSpeeds = new float[_spinLights.Length];
         SetSpinSpeeds();
-    }
-
-    private void SetSpinSpeeds()
-    {
-        for (int i = 0; i < _spinSpeeds.Length; i++)
-        {
-            _spinSpeeds[i] = Random.Range(1, 360);
-        }
     }
 
     private void Update()
@@ -38,8 +29,18 @@ public class MyFirstScript : MonoBehaviour
             RotateLight(_spinLights[i], _spinSpeeds[i]);
             PulseSpinLight(_spinLights[i]);
         }
-
     }
+
+    private void SetSpinSpeeds()
+    {
+        _spinSpeeds = new float[_spinLights.Length];
+
+        for (int i = 0; i < _spinSpeeds.Length; i++)
+        {
+            _spinSpeeds[i] = Random.Range(1, 360);
+        }
+    }
+
 
     public void OnMuffinClicked()
     {
