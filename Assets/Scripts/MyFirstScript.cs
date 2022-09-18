@@ -15,6 +15,7 @@ public class MyFirstScript : MonoBehaviour
     [SerializeField] private float _sinDistance = 1f;
     [SerializeField] private float _sinSpeed = 1f;
     [SerializeField] private float _waveOffset = 0f;
+    [SerializeField] private GameObject _textRewardPrefab;
 
     void Start()
     {
@@ -54,6 +55,8 @@ public class MyFirstScript : MonoBehaviour
         }
 
         UpdateTotalMuffins();
+        GameObject textRewardClone = Instantiate(_textRewardPrefab, transform);
+        textRewardClone.transform.localPosition = MyToolBox.GetRandomVector2();
     }
 
     private void UpdateTotalMuffins()
