@@ -5,12 +5,9 @@ using TMPro;
 
 public class MyFirstScript : MonoBehaviour
 {
-    private int _counter = 0;
     private float[] _spinSpeeds;
 
-    [SerializeField] private int _muffinsPerClick = 1;
-    [Range(0, 100)][SerializeField] private int _criticalPercentChance = 1;
-    [SerializeField] private TextMeshProUGUI _totalMuffinsText;
+    [SerializeField] private GameManager gameManager;
 
     [SerializeField] private Transform[] _spinLights;
     [SerializeField] private float _sinDistance = 1f;
@@ -23,10 +20,9 @@ public class MyFirstScript : MonoBehaviour
     [SerializeField] private float _textMinSpawnY = -150f;
     [SerializeField] private float _textMaxSpawnY = 150f;
 
-    void Start()
+    private void Awake()
     {
-        UpdateTotalMuffins();
-        SetSpinSpeeds();
+        SetLightSpinSpeeds();
     }
 
     private void Update()
@@ -38,19 +34,7 @@ public class MyFirstScript : MonoBehaviour
         }
     }
 
-    private void UpdateTotalMuffins()
-    {
-        if (_counter == 1)
-        {
-            _totalMuffinsText.text = _counter.ToString() + " Muffin";
-        }
-        else
-        {
-            _totalMuffinsText.text = _counter.ToString() + " Muffins";
-        }
-    }
-
-    private void SetSpinSpeeds()
+    private void SetLightSpinSpeeds()
     {
         _spinSpeeds = new float[_spinLights.Length];
 
@@ -74,32 +58,8 @@ public class MyFirstScript : MonoBehaviour
 
     public void OnMuffinClicked()
     {
-        if (IsCriticalClick())
-        {
-            _counter += _muffinsPerClick * 10;
-        }
-        else
-        {
-            _counter += _muffinsPerClick;
-        }
-
-        UpdateTotalMuffins();
+        gameManager.AddMuffins();
         GenerateRewardText();
-    }
-
-    private bool IsCriticalClick()
-    {
-        int randomNum = Random.Range(1, 100);
-
-        if (randomNum <= _criticalPercentChance)
-        {
-            Debug.Log("critical click!");
-            return true;
-        }
-        else
-        {
-            return false;
-        }
     }
 
     private void GenerateRewardText()
@@ -112,4 +72,19 @@ public class MyFirstScript : MonoBehaviour
         textRewardClone.transform.localPosition = randomSpawnPoint;
     }
 }
+
+//private bool IsCriticalClick()
+//{
+//    int randomNum = Random.Range(1, 100);
+
+//    if (randomNum <= _criticalPercentChance)
+//    {
+//        Debug.Log("critical click!");
+//        return true;
+//    }
+//    else
+//    {
+//        return false;
+//    }
+//}
 
