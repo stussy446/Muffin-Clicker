@@ -36,8 +36,5 @@ public class GameManager : MonoBehaviour
         _header.UpdateTotalMuffins(_counter);
 
         return addedMuffins;
-
     }
-
-  
 }
