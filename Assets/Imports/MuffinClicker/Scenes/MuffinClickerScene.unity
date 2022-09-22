@@ -1457,8 +1457,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53887d893f2a74fef9a8fb4c8d4a1309, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _totalMuffinsText: {fileID: 1710630146}
   _muffinsPerClick: 1
+  _header: {fileID: 0}
   _criticalPercentChance: 1
 --- !u!4 &1622514172
 Transform:
@@ -1976,6 +1976,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2098545962}
+  - component: {fileID: 2098545963}
   m_Layer: 5
   m_Name: Header
   m_TagString: Untagged
@@ -2006,6 +2007,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -150}
   m_SizeDelta: {x: 0, y: 150}
   m_Pivot: {x: 0.5, y: 1}
+--- !u!114 &2098545963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098545961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44805437df05e488081a0416b3703814, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _totalMuffinsText: {fileID: 1710630146}
 --- !u!1001 &6216710415003856947
 PrefabInstance:
   m_ObjectHideFlags: 0

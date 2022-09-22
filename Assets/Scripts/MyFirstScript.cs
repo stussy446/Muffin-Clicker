@@ -65,6 +65,7 @@ public class MyFirstScript : MonoBehaviour
     private void GenerateRewardText(int addedMuffins)
     {
         TextMeshProUGUI textRewardClone = Instantiate(_textRewardPrefab, transform);
+
         Vector2 randomSpawnPoint = MyToolBox.GetRandomVector2
             (_textMinSpawnX, _textMaxSpawnX,
              _textMinSpawnY, _textMaxSpawnY);
