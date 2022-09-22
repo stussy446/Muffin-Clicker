@@ -1,7 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Controls the spinlight's pulse speed, distance and wave offset
+/// </summary>
 public class LightPulseHandler : MonoBehaviour
 {
     [SerializeField] private float _sinDistance = 1f;

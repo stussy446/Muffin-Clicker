@@ -1,13 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// Handles Muffin Clicker Game State
+/// </summary>
 public class GameManager : MonoBehaviour
 {
-    private int _counter = 0;
+    private int _totalMuffins = 0;
+    private int _muffinsPerClick = 1;
 
-    [SerializeField] private int _muffinsPerClick = 1;
     [SerializeField] Header _header;
 
     [Range(0, 100)]
@@ -15,9 +15,13 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        _header.UpdateTotalMuffins(_counter);
+        _header.UpdateTotalMuffins(_totalMuffins);
     }
 
+    /// <summary>
+    /// Adds muffins to the current total muffins
+    /// </summary>
+    /// <returns>Returns the added muffins</returns>
     public int AddMuffins()
     {
         int addedMuffins = 0;
@@ -32,8 +36,8 @@ public class GameManager : MonoBehaviour
             addedMuffins += _muffinsPerClick;
         }
 
-        _counter += addedMuffins;
-        _header.UpdateTotalMuffins(_counter);
+        _totalMuffins += addedMuffins;
+        _header.UpdateTotalMuffins(_totalMuffins);
 
         return addedMuffins;
     }

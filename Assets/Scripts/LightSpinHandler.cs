@@ -1,7 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Controls the spinlight's spin speed based on a randomly generated number
+/// between 1 and 360 inclusive
+/// </summary>
 public class LightSpinHandler : MonoBehaviour
 {
     private float _spinSpeed;

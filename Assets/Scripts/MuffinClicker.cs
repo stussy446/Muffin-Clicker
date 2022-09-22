@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class MyFirstScript : MonoBehaviour
+public class MuffinClicker : MonoBehaviour
 {
     [SerializeField] private GameManager gameManager;
 
@@ -13,6 +11,9 @@ public class MyFirstScript : MonoBehaviour
     [SerializeField] private float _textMinSpawnY = -150f;
     [SerializeField] private float _textMaxSpawnY = 150f;
 
+    /// <summary>
+    /// Handles behavior when a click event is detected
+    /// </summary>
     public void OnMuffinClicked()
     {
         int addedMuffins = gameManager.AddMuffins();
@@ -28,6 +29,6 @@ public class MyFirstScript : MonoBehaviour
              _textMinSpawnY, _textMaxSpawnY);
 
         textRewardClone.transform.localPosition = randomSpawnPoint;
-        textRewardClone.text = "+" + addedMuffins;
+        textRewardClone.text = $"+ {addedMuffins}";
     }
 }
