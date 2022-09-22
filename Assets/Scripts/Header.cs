@@ -14,7 +14,8 @@ public class Header : MonoBehaviour
     /// <param name="counter">The total muffins</param>
     public void UpdateTotalMuffins(int counter)
     {
-        _totalMuffinsText.text = counter == 1 ? $"{counter} muffin" :
+        _totalMuffinsText.text = counter == 1 ?
+            $"{counter} muffin" :
             $"{counter} muffins";
     }
 
