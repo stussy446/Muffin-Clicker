@@ -326,7 +326,7 @@ MonoBehaviour:
   _sinDistance: 0.27
   _sinSpeed: 5.32
   _waveOffset: 1.31
-  _textRewardPrefab: {fileID: 7669010770732934095, guid: 281f6c949934947238d2c07461f07b3e, type: 3}
+  _textRewardPrefab: {fileID: 4130889491181757055, guid: 281f6c949934947238d2c07461f07b3e, type: 3}
   _textMinSpawnX: -150
   _textMaxSpawnX: 180
   _textMinSpawnY: -150

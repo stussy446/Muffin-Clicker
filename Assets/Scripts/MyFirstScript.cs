@@ -14,7 +14,7 @@ public class MyFirstScript : MonoBehaviour
     [SerializeField] private float _sinSpeed = 1f;
     [SerializeField] private float _waveOffset = 0f;
 
-    [SerializeField] private GameObject _textRewardPrefab;
+    [SerializeField] private TextMeshProUGUI _textRewardPrefab;
     [SerializeField] private float _textMinSpawnX = -150f;
     [SerializeField] private float _textMaxSpawnX = 180f;
     [SerializeField] private float _textMinSpawnY = -150f;
@@ -58,33 +58,18 @@ public class MyFirstScript : MonoBehaviour
 
     public void OnMuffinClicked()
     {
-        gameManager.AddMuffins();
-        GenerateRewardText();
+        int addedMuffins = gameManager.AddMuffins();
+        GenerateRewardText(addedMuffins);
     }
 
-    private void GenerateRewardText()
+    private void GenerateRewardText(int addedMuffins)
     {
-        GameObject textRewardClone = Instantiate(_textRewardPrefab, transform);
+        TextMeshProUGUI textRewardClone = Instantiate(_textRewardPrefab, transform);
         Vector2 randomSpawnPoint = MyToolBox.GetRandomVector2
             (_textMinSpawnX, _textMaxSpawnX,
              _textMinSpawnY, _textMaxSpawnY);
 
         textRewardClone.transform.localPosition = randomSpawnPoint;
+        textRewardClone.text = "+" + addedMuffins;
     }
 }
-
-//private bool IsCriticalClick()
-//{
-//    int randomNum = Random.Range(1, 100);
-
-//    if (randomNum <= _criticalPercentChance)
-//    {
-//        Debug.Log("critical click!");
-//        return true;
-//    }
-//    else
-//    {
-//        return false;
-//    }
-//}
-
