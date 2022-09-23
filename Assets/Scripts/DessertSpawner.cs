@@ -6,10 +6,13 @@ using UnityEngine.UI;
 public class DessertSpawner : MonoBehaviour
 {
     [SerializeField] private Image[] _dessertImages;
-    [SerializeField] private float _secondsBetweenSpawns = 1f;
 
     private int _randomDessertIndex;
     private float _timer = 0;
+
+    private float _secondsBetweenSpawns;
+    private float _fastestSpawnRate = 0.2f;
+    private float _slowestSpawnRate = 0.5f;
 
     private void Update()
     {
@@ -17,6 +20,7 @@ public class DessertSpawner : MonoBehaviour
         if (_timer >= _secondsBetweenSpawns)
         {
             SpawnNextDessert();
+            _secondsBetweenSpawns = Random.Range(_fastestSpawnRate, _slowestSpawnRate);
             _timer = 0;
         }
     }
