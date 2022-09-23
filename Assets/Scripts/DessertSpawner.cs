@@ -1,18 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Handles where desserts spawn on the canvas and the rate of spawning
+/// </summary>
 public class DessertSpawner : MonoBehaviour
 {
     [SerializeField] private Image[] _dessertImages;
 
-    private int _randomDessertIndex;
     private float _timer = 0;
 
     private float _secondsBetweenSpawns;
     private float _fastestSpawnRate = 0.2f;
     private float _slowestSpawnRate = 0.5f;
+
+    private float _xBoundaryOffsset = 10f;
+    private float _yBoundaryOffsset = 60f;
+
 
     private void Update()
     {
@@ -27,11 +31,15 @@ public class DessertSpawner : MonoBehaviour
 
     private void SpawnNextDessert()
     {
-        _randomDessertIndex = (int)Random.Range(0f, _dessertImages.Length - 1);
-        Vector2 randomVector = MyToolBox.GetRandomVector2(-transform.position.x + 10,
-            transform.position.x - 10, transform.position.y + 60, transform.position.y + 60);
+        // Sets a random index, and vector position on the canvas, and spawns chosen
+        // dessert at the chosen vector position
+        int randomDessertIndex = (int)Random.Range(0f, _dessertImages.Length - 1);
 
-        Image spawnedDessert = Instantiate(_dessertImages[_randomDessertIndex], transform);
+        Vector2 randomVector = MyToolBox.GetRandomVector2(-transform.position.x + _xBoundaryOffsset,
+            transform.position.x - _xBoundaryOffsset, transform.position.y + _yBoundaryOffsset,
+            transform.position.y - _yBoundaryOffsset);
+
+        Image spawnedDessert = Instantiate(_dessertImages[randomDessertIndex], transform);
         spawnedDessert.transform.localPosition = randomVector;
     }
 }

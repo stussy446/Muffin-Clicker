@@ -1,7 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Handles the rate of speed desserts fall and destroys dessert when outside of
+/// player view 
+/// </summary>
 public class DessertFall : MonoBehaviour
 {
     [SerializeField] float _moveSpeed;
