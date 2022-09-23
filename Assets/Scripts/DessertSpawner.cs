@@ -37,7 +37,7 @@ public class DessertSpawner : MonoBehaviour
 
         Vector2 randomVector = MyToolBox.GetRandomVector2(-transform.position.x + _xBoundaryOffsset,
             transform.position.x - _xBoundaryOffsset, transform.position.y + _yBoundaryOffsset,
-            transform.position.y - _yBoundaryOffsset);
+            transform.position.y + _yBoundaryOffsset);
 
         Image spawnedDessert = Instantiate(_dessertImages[randomDessertIndex], transform);
         spawnedDessert.transform.localPosition = randomVector;
