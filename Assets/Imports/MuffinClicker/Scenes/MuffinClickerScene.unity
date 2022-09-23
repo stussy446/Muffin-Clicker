@@ -442,7 +442,6 @@ GameObject:
   - component: {fileID: 739821366}
   - component: {fileID: 739821365}
   - component: {fileID: 739821367}
-  - component: {fileID: 739821368}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -528,37 +527,6 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
---- !u!114 &739821368
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 739821363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fe860324b49c49a693901fd6ba30c85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _dessertImages:
-  - {fileID: 5617715942010679131, guid: 3a6e0d2a36571477f8ba136a244a08e6, type: 3}
-  - {fileID: 170677513725735294, guid: 33f2ee242f5bc47d0a39ee8417bc13ae, type: 3}
-  - {fileID: 890061188111496055, guid: 3a7f0ecf7e332418fa98874dc380e668, type: 3}
-  - {fileID: 2108768641960786638, guid: 6e8013e1ea61c45c1b747867ac9862b6, type: 3}
-  - {fileID: 466860504245495375, guid: 19fd0d230315c45309de4c9618ee6f69, type: 3}
-  - {fileID: 5954371567484649630, guid: 61570baeac8864a048bada77d0bc3deb, type: 3}
-  - {fileID: 1825838943928871700, guid: e456d5c593c624f14a921f2196201a48, type: 3}
-  - {fileID: 9134234832788696889, guid: ff41a83f47fa04f859df3305d98bfb99, type: 3}
-  - {fileID: 3335915991851821383, guid: 5301f1ee1fc864a8baf2cb9bca2e1175, type: 3}
-  - {fileID: 8929040450612045390, guid: 15e7fceac27c149cba9d2eaff5935617, type: 3}
-  - {fileID: 2918386988968607734, guid: 0ad83cb20bb3d43b3907d5fc28fc1a3d, type: 3}
-  - {fileID: 1641230222745927348, guid: 191688c84d9694c69be54b5589fb8a29, type: 3}
-  - {fileID: 7624171101177369786, guid: 07293646dea1e449680f21867ef628ff, type: 3}
-  - {fileID: 5542803805979288360, guid: 179783427bbd64bf59893a5e2c80e5b3, type: 3}
-  - {fileID: 7447453209224045845, guid: dc1a54c371a31486cab31bf608ade4f8, type: 3}
-  - {fileID: 5775608539853753496, guid: ff75623b7515b4e4792fc9d13f084999, type: 3}
-  - {fileID: 9217060481069308708, guid: b51147a5c69f34a42b64c9e3a7d4ab23, type: 3}
-  _secondsBetweenSpawns: 1
 --- !u!1 &774430583
 GameObject:
   m_ObjectHideFlags: 0
@@ -1778,6 +1746,7 @@ GameObject:
   - component: {fileID: 1897458480}
   - component: {fileID: 1897458479}
   - component: {fileID: 1897458478}
+  - component: {fileID: 1897458482}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1871,6 +1840,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1897458482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897458477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fe860324b49c49a693901fd6ba30c85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dessertImages:
+  - {fileID: 5617715942010679131, guid: 3a6e0d2a36571477f8ba136a244a08e6, type: 3}
+  - {fileID: 170677513725735294, guid: 33f2ee242f5bc47d0a39ee8417bc13ae, type: 3}
+  - {fileID: 890061188111496055, guid: 3a7f0ecf7e332418fa98874dc380e668, type: 3}
+  - {fileID: 2108768641960786638, guid: 6e8013e1ea61c45c1b747867ac9862b6, type: 3}
+  - {fileID: 466860504245495375, guid: 19fd0d230315c45309de4c9618ee6f69, type: 3}
+  - {fileID: 5954371567484649630, guid: 61570baeac8864a048bada77d0bc3deb, type: 3}
+  - {fileID: 1825838943928871700, guid: e456d5c593c624f14a921f2196201a48, type: 3}
+  - {fileID: 9134234832788696889, guid: ff41a83f47fa04f859df3305d98bfb99, type: 3}
+  - {fileID: 3335915991851821383, guid: 5301f1ee1fc864a8baf2cb9bca2e1175, type: 3}
+  - {fileID: 8929040450612045390, guid: 15e7fceac27c149cba9d2eaff5935617, type: 3}
+  - {fileID: 2918386988968607734, guid: 0ad83cb20bb3d43b3907d5fc28fc1a3d, type: 3}
+  - {fileID: 1641230222745927348, guid: 191688c84d9694c69be54b5589fb8a29, type: 3}
+  - {fileID: 7624171101177369786, guid: 07293646dea1e449680f21867ef628ff, type: 3}
+  - {fileID: 5542803805979288360, guid: 179783427bbd64bf59893a5e2c80e5b3, type: 3}
+  - {fileID: 7447453209224045845, guid: dc1a54c371a31486cab31bf608ade4f8, type: 3}
+  - {fileID: 5775608539853753496, guid: ff75623b7515b4e4792fc9d13f084999, type: 3}
+  - {fileID: 9217060481069308708, guid: b51147a5c69f34a42b64c9e3a7d4ab23, type: 3}
+  _secondsBetweenSpawns: 1
 --- !u!1 &2097339550
 GameObject:
   m_ObjectHideFlags: 0
