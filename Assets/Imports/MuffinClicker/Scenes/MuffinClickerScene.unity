@@ -218,7 +218,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spinlight2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2926185979257491126, guid: 8c06802df36724a3b96e90b67ca0161a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8c06802df36724a3b96e90b67ca0161a, type: 3}
 --- !u!1 &330379180
 GameObject:
@@ -558,7 +559,14 @@ MonoBehaviour:
   - {fileID: 7447453209224045845, guid: dc1a54c371a31486cab31bf608ade4f8, type: 3}
   - {fileID: 5775608539853753496, guid: ff75623b7515b4e4792fc9d13f084999, type: 3}
   - {fileID: 9217060481069308708, guid: b51147a5c69f34a42b64c9e3a7d4ab23, type: 3}
-  _secondsBetweenSpawns: 1
+  - {fileID: 7020771975137287568, guid: f7c2048394b804093b026e2e29a8abf6, type: 3}
+  - {fileID: 2262720966271990860, guid: ea53c60db80e74260a9e3c1acf354a0c, type: 3}
+  - {fileID: 1094595916764139381, guid: 57bceec2921a545c1a373d5e287a9dc0, type: 3}
+  - {fileID: 865454887526040018, guid: 14cd48ee8050a49bc97ac3ada36a9d37, type: 3}
+  - {fileID: 3709403111642984157, guid: 46c883863d4974037938fb704b65c75e, type: 3}
+  - {fileID: 8511202019614539842, guid: 9b1f7836db5a44900a558ead693b1646, type: 3}
+  - {fileID: 3728913885083781881, guid: 88e8826caa33840eb9876f378def4634, type: 3}
+  - {fileID: 7729249893592216580, guid: a91f2b595f8b24f33b1443fab168f650, type: 3}
 --- !u!1 &774430583
 GameObject:
   m_ObjectHideFlags: 0
@@ -2095,7 +2103,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spinlight1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2926185979257491126, guid: 8c06802df36724a3b96e90b67ca0161a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8c06802df36724a3b96e90b67ca0161a, type: 3}
 --- !u!1001 &6216710415003856947
 PrefabInstance:
