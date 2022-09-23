@@ -8,9 +8,6 @@ public class DessertSpawner : MonoBehaviour
     [SerializeField] private Image[] _dessertImages;
     [SerializeField] private float _secondsBetweenSpawns = 1f;
 
-    const float ParentY = 608f;
-    const float ParentX = 960f;
-
     private int _randomDessertIndex;
     private float _timer = 0;
 
@@ -27,9 +24,10 @@ public class DessertSpawner : MonoBehaviour
     private void SpawnNextDessert()
     {
         _randomDessertIndex = (int)Random.Range(0f, _dessertImages.Length - 1);
-        Vector2 randomVector = MyToolBox.GetRandomVector2(-ParentX, ParentX, ParentY, ParentY);
-        Image spawnedDessert = Instantiate(_dessertImages[_randomDessertIndex], transform);
+        Vector2 randomVector = MyToolBox.GetRandomVector2(-transform.position.x + 10,
+            transform.position.x - 10, transform.position.y + 60, transform.position.y + 60);
 
+        Image spawnedDessert = Instantiate(_dessertImages[_randomDessertIndex], transform);
         spawnedDessert.transform.localPosition = randomVector;
     }
 }
