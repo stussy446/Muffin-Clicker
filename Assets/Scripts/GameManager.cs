@@ -5,7 +5,6 @@ using UnityEngine;
 /// </summary>
 public class GameManager : MonoBehaviour
 {
-    private int _totalMuffins = 0;
     private int _muffinsPerClick = 1;
 
     [SerializeField] Header _header;
@@ -13,9 +12,11 @@ public class GameManager : MonoBehaviour
     [Range(0, 100)]
     [SerializeField] private int _criticalPercentChance = 1;
 
+    public int TotalMuffins { get; private set; }
+
     void Start()
     {
-        _header.UpdateTotalMuffins(_totalMuffins);
+        _header.UpdateTotalMuffins(TotalMuffins);
     }
 
     /// <summary>
@@ -36,8 +37,8 @@ public class GameManager : MonoBehaviour
             addedMuffins += _muffinsPerClick;
         }
 
-        _totalMuffins += addedMuffins;
-        _header.UpdateTotalMuffins(_totalMuffins);
+        TotalMuffins += addedMuffins;
+        _header.UpdateTotalMuffins(TotalMuffins);
 
         return addedMuffins;
     }
