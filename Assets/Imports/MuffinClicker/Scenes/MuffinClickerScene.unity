@@ -2242,6 +2242,34 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6216710415694158625, guid: a419d27ab3f522742a3dd9672e2fda7c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6216710415694158625, guid: a419d27ab3f522742a3dd9672e2fda7c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6216710415694158625, guid: a419d27ab3f522742a3dd9672e2fda7c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6216710415003856951}
+    - target: {fileID: 6216710415694158625, guid: a419d27ab3f522742a3dd9672e2fda7c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6216710415694158625, guid: a419d27ab3f522742a3dd9672e2fda7c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PurchaseUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 6216710415694158625, guid: a419d27ab3f522742a3dd9672e2fda7c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UpgradeButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6216710415694158625, guid: a419d27ab3f522742a3dd9672e2fda7c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6216710415694158626, guid: a419d27ab3f522742a3dd9672e2fda7c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2303,6 +2331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1595837acb95d42e8bd82f8cc418fce5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _upgradeCostIncrease: 10
   _levelText: {fileID: 6216710415003856949}
   _priceText: {fileID: 6216710415003856948}
   _gameManager: {fileID: 1622514171}
