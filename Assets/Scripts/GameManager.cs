@@ -1,21 +1,35 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 /// <summary>
 /// Handles Muffin Clicker Game State
 /// </summary>
 public class GameManager : MonoBehaviour
 {
-    private int _muffinsPerClick = 1;
+    public UnityEvent<int> OnTotalMuffinsChanged;
 
-    [SerializeField] Header _header;
+    private int _muffinsPerClick = 1;
+    private int _totalMuffins;
+
     [Range(0, 100)]
     [SerializeField] private int _criticalPercentChance = 1;
 
-    public int TotalMuffins { get; private set; }
+    public int TotalMuffins
+    {
+        get
+        {
+            return _totalMuffins;
+        }
+        private set
+        {
+            _totalMuffins = value;
+            OnTotalMuffinsChanged?.Invoke(_totalMuffins);
+        }
+    }
 
     void Start()
     {
-        _header.UpdateTotalMuffins(TotalMuffins);
+        TotalMuffins = 0;
     }
 
     /// <summary>
@@ -37,7 +51,6 @@ public class GameManager : MonoBehaviour
         }
 
         TotalMuffins += addedMuffins;
-        _header.UpdateTotalMuffins(TotalMuffins);
 
         return addedMuffins;
     }
@@ -52,6 +65,5 @@ public class GameManager : MonoBehaviour
     {
         TotalMuffins -= currentUpgradeCost;
         _muffinsPerClick = currentLevel;
-        _header.UpdateTotalMuffins(TotalMuffins);
     }
 }

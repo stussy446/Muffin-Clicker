@@ -1442,7 +1442,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53887d893f2a74fef9a8fb4c8d4a1309, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _header: {fileID: 2098545963}
+  OnTotalMuffinsChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2098545963}
+        m_TargetAssemblyTypeName: Header, Assembly-CSharp
+        m_MethodName: UpdateTotalMuffins
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6216710415003856951}
+        m_TargetAssemblyTypeName: UpgradeButton, Assembly-CSharp
+        m_MethodName: TotalMuffinsChanged
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _criticalPercentChance: 1
 --- !u!4 &1622514172
 Transform:
@@ -2331,7 +2357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1595837acb95d42e8bd82f8cc418fce5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _upgradeCostIncrease: 10
+  _powerIncrease: 1.5
   _levelText: {fileID: 6216710415003856949}
   _priceText: {fileID: 6216710415003856948}
   _gameManager: {fileID: 1622514171}

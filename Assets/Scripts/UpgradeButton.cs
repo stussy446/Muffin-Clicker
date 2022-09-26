@@ -6,10 +6,11 @@ using TMPro;
 /// </summary>
 public class UpgradeButton : MonoBehaviour
 {
-    private int _currentUpgradeCost = 10;
+    private int _currentUpgradeCost = 5;
     private int _currentLevel = 1;
+    private int _upgradeCostIncrease;
 
-    [SerializeField]private int _upgradeCostIncrease;
+    [SerializeField] private float _powerIncrease;
     [SerializeField] private TextMeshProUGUI _levelText;
     [SerializeField] private TextMeshProUGUI _priceText;
     [SerializeField] private GameManager _gameManager;
@@ -29,7 +30,7 @@ public class UpgradeButton : MonoBehaviour
         {
             _currentLevel++;
             _gameManager.ApplyMuffinsPerClickUpgrade(_currentUpgradeCost, _currentLevel);
-            _currentUpgradeCost += _upgradeCostIncrease;
+            _currentUpgradeCost += Mathf.RoundToInt(Mathf.Pow(_currentLevel - 1, _powerIncrease));
             SetUpgradeText();
         }
         else
@@ -42,5 +43,19 @@ public class UpgradeButton : MonoBehaviour
     {
         _levelText.text = $"{_currentLevel}";
         _priceText.text = $"{_currentUpgradeCost}";
+    }
+
+    public void TotalMuffinsChanged(int totalMuffins)
+    {
+        bool canAfford = totalMuffins >= _currentUpgradeCost;
+        if (canAfford)
+        {
+            _priceText.color = Color.green;
+        }
+        else
+        {
+            _priceText.color = Color.red;
+
+        }
     }
 }
