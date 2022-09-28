@@ -6,7 +6,8 @@ using UnityEngine.UI;
 /// </summary>
 public class DessertSpawner : MonoBehaviour
 {
-    [SerializeField] private Image[] _dessertImages;
+    [SerializeField] private RawImage _prefab;
+    [SerializeField] private Texture2D[] _snacks;
 
     private float _timer = 0;
 
@@ -33,13 +34,15 @@ public class DessertSpawner : MonoBehaviour
     {
         // Sets a random index, and vector position on the canvas, and spawns chosen
         // dessert at the chosen vector position
-        int randomDessertIndex = (int)Random.Range(0f, _dessertImages.Length - 1);
+        int randomDessertIndex = (int)Random.Range(0f, _snacks.Length - 1);
+
+        RawImage myImage = Instantiate(_prefab, transform);
+        myImage.texture = _snacks[randomDessertIndex];
 
         Vector2 randomVector = MyToolBox.GetRandomVector2(-transform.position.x + _xBoundaryOffsset,
             transform.position.x - _xBoundaryOffsset, transform.position.y + _yBoundaryOffsset,
             transform.position.y + _yBoundaryOffsset);
 
-        Image spawnedDessert = Instantiate(_dessertImages[randomDessertIndex], transform);
-        spawnedDessert.transform.localPosition = randomVector;
+        myImage.transform.localPosition = randomVector;
     }
 }
