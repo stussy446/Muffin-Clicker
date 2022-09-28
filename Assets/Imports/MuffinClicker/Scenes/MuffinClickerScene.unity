@@ -1501,6 +1501,33 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1187164397}
+        m_TargetAssemblyTypeName: UpgradeButton, Assembly-CSharp
+        m_MethodName: TotalMuffinsChanged
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnMuffinsPerSecondChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2098545963}
+        m_TargetAssemblyTypeName: Header, Assembly-CSharp
+        m_MethodName: UpdateMuffinsPerSecond
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _criticalPercentChance: 1
 --- !u!4 &1622514172
 Transform:
@@ -2078,6 +2105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _totalMuffinsText: {fileID: 1710630146}
+  _muffinPerSecondText: {fileID: 1613461460}
 --- !u!1001 &5512116666990070678
 PrefabInstance:
   m_ObjectHideFlags: 0

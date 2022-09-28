@@ -37,7 +37,7 @@ public class UpgradeButton : MonoBehaviour
         if (_gameManager.TotalMuffins >= CurrentUpgradeCost)
         {
             CurrentLevel++;
-            GameManager.ApplyUpgrade(CurrentUpgradeCost, GameManager.MuffinsPerClick, CurrentLevel);
+            GameManager.ApplyMuffinsPerClickUpgrade(CurrentUpgradeCost, CurrentLevel);
             CurrentUpgradeCost += Mathf.RoundToInt(Mathf.Pow(CurrentLevel - 1, PowerIncrease));
             SetUpgradeText();
         }

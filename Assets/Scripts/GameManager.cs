@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class GameManager : MonoBehaviour
 {
     public UnityEvent<int> OnTotalMuffinsChanged;
+    public UnityEvent<int> OnMuffinsPerSecondChanged;
 
     private int _muffinsPerClick = 1;
     private int _totalMuffins;
@@ -28,13 +29,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public int MuffinsPerSecond { get; private set; }
-    public int MuffinsPerClick { get; private set; }
+    public int MuffinsPerSecond { get => _muffinsPerSecond; set => _muffinsPerSecond = value; }
+    public int MuffinsPerClick { get => _muffinsPerClick; set => _muffinsPerClick= value; }
 
 
     void Start()
     {
         TotalMuffins = 0;
+        InvokeRepeating("AddMuffinsPerSecond", 0.1f, 1f);
     }
 
     /// <summary>
@@ -66,10 +68,22 @@ public class GameManager : MonoBehaviour
     /// </summary>
     /// <param name="currentUpgradeCost">cost of the upgrade</param>
     /// <param name="currentLevel">current level of the player</param>
-    internal void ApplyUpgrade(int currentUpgradeCost, int upgradeValue, int currentLevel)
+    public void ApplyMuffinsPerClickUpgrade(int currentUpgradeCost, int currentLevel)
     {
         TotalMuffins -= currentUpgradeCost;
-        upgradeValue = currentLevel;
+        MuffinsPerClick = currentLevel;
+    }
+
+    public void ApplyMuffinsPerSecondUpgrade(int currentUpgradeCost, int currentLevel)
+    {
+        TotalMuffins -= currentUpgradeCost;
+        MuffinsPerSecond = currentLevel;
+        OnMuffinsPerSecondChanged?.Invoke(MuffinsPerSecond);
+    }
+
+    private void AddMuffinsPerSecond()
+    {
+        TotalMuffins += MuffinsPerSecond;
     }
 
 

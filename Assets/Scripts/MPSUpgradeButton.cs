@@ -6,26 +6,19 @@ using UnityEngine;
 public class MPSUpgradeButton : UpgradeButton
 {
     private int _mpsUpgradeCost = 5;
+    private int _mpsLevel = 0;
 
     public override int CurrentUpgradeCost { get => _mpsUpgradeCost; set => _mpsUpgradeCost = value; }
-    // Start is called before the first frame update
-    void Start()
-    {
-        SetUpgradeText();
-    }
+    public override int CurrentLevel { get => _mpsLevel; set => _mpsLevel = value; }
 
     public override void PurchaseUpgrade()
     {
         if (GameManager.TotalMuffins >= CurrentUpgradeCost)
         {
             CurrentLevel++;
-            GameManager.ApplyUpgrade(CurrentUpgradeCost, GameManager.MuffinsPerClick, CurrentLevel);
+            GameManager.ApplyMuffinsPerSecondUpgrade(CurrentUpgradeCost, CurrentLevel);
             CurrentUpgradeCost += Mathf.RoundToInt(Mathf.Pow(CurrentLevel - 1, PowerIncrease));
             SetUpgradeText();
-        }
-        else
-        {
-            Debug.Log("not enough points");
         }
     }
 

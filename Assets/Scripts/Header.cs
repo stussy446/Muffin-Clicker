@@ -7,6 +7,8 @@ using TMPro;
 public class Header : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _totalMuffinsText;
+    [SerializeField] private TextMeshProUGUI _muffinPerSecondText;
+
 
     /// <summary>       
     /// Updates the total muffins text
@@ -17,6 +19,11 @@ public class Header : MonoBehaviour
         _totalMuffinsText.text = counter == 1 ?
             $"{counter} muffin" :
             $"{counter} muffins";
+    }
+
+    public void UpdateMuffinsPerSecond(int muffinsPerSecond)
+    {
+        _muffinPerSecondText.text = $"{muffinsPerSecond} Muffins/Second";
     }
 
 }
