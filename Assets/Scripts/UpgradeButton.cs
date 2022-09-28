@@ -15,6 +15,14 @@ public class UpgradeButton : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _priceText;
     [SerializeField] private GameManager _gameManager;
 
+    public virtual int CurrentUpgradeCost { get => _currentUpgradeCost; set => _currentUpgradeCost = value; }
+    public virtual GameManager GameManager { get => _gameManager;}
+    public virtual int CurrentLevel { get => _currentLevel; set => _currentLevel = value; }
+    public virtual float PowerIncrease { get => _powerIncrease;}
+    public virtual TextMeshProUGUI LevelText { get => _levelText; set => _levelText = value; }
+    public virtual TextMeshProUGUI PriceText { get => _priceText; set => _priceText = value; }
+
+
     void Start()
     {
         SetUpgradeText();
@@ -24,13 +32,13 @@ public class UpgradeButton : MonoBehaviour
     /// called when the upgrade button is clicked, checks if player has enough
     /// points for an upgrade and has the gameManager apply the upgrade if it does
     /// </summary>
-    public void PurchaseUpgrade()
+    public virtual void PurchaseUpgrade()
     {
-        if (_gameManager.TotalMuffins >= _currentUpgradeCost)
+        if (_gameManager.TotalMuffins >= CurrentUpgradeCost)
         {
-            _currentLevel++;
-            _gameManager.ApplyMuffinsPerClickUpgrade(_currentUpgradeCost, _currentLevel);
-            _currentUpgradeCost += Mathf.RoundToInt(Mathf.Pow(_currentLevel - 1, _powerIncrease));
+            CurrentLevel++;
+            GameManager.ApplyUpgrade(CurrentUpgradeCost, GameManager.MuffinsPerClick, CurrentLevel);
+            CurrentUpgradeCost += Mathf.RoundToInt(Mathf.Pow(CurrentLevel - 1, PowerIncrease));
             SetUpgradeText();
         }
         else
@@ -39,22 +47,22 @@ public class UpgradeButton : MonoBehaviour
         }
     }
 
-    private void SetUpgradeText()
+    public virtual void SetUpgradeText()
     {
-        _levelText.text = $"{_currentLevel}";
-        _priceText.text = $"{_currentUpgradeCost}";
+        LevelText.text = $"{CurrentLevel}";
+        PriceText.text = $"{CurrentUpgradeCost}";
     }
 
-    public void TotalMuffinsChanged(int totalMuffins)
+    public virtual void TotalMuffinsChanged(int totalMuffins)
     {
-        bool canAfford = totalMuffins >= _currentUpgradeCost;
+        bool canAfford = totalMuffins >= CurrentUpgradeCost;
         if (canAfford)
         {
-            _priceText.color = Color.green;
+            PriceText.color = Color.green;
         }
         else
         {
-            _priceText.color = Color.red;
+            PriceText.color = Color.red;
 
         }
     }

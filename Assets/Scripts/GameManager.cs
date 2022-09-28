@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 
     private int _muffinsPerClick = 1;
     private int _totalMuffins;
+    private int _muffinsPerSecond;
 
     [Range(0, 100)]
     [SerializeField] private int _criticalPercentChance = 1;
@@ -26,6 +27,10 @@ public class GameManager : MonoBehaviour
             OnTotalMuffinsChanged?.Invoke(_totalMuffins);
         }
     }
+
+    public int MuffinsPerSecond { get; private set; }
+    public int MuffinsPerClick { get; private set; }
+
 
     void Start()
     {
@@ -56,14 +61,16 @@ public class GameManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Increases muffins per click to the current level of player and subtracts
+    /// Increases upgrade to the current level of player and subtracts
     /// the cost of the upgrade from the total muffins
     /// </summary>
     /// <param name="currentUpgradeCost">cost of the upgrade</param>
     /// <param name="currentLevel">current level of the player</param>
-    internal void ApplyMuffinsPerClickUpgrade(int currentUpgradeCost, int currentLevel)
+    internal void ApplyUpgrade(int currentUpgradeCost, int upgradeValue, int currentLevel)
     {
         TotalMuffins -= currentUpgradeCost;
-        _muffinsPerClick = currentLevel;
+        upgradeValue = currentLevel;
     }
+
+
 }
