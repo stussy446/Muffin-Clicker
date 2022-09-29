@@ -2367,6 +2367,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6216710415441672157, guid: a419d27ab3f522742a3dd9672e2fda7c, type: 3}
+      propertyPath: m_text
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6216710415520747572, guid: a419d27ab3f522742a3dd9672e2fda7c, type: 3}
+      propertyPath: m_text
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6216710415618612698, guid: a419d27ab3f522742a3dd9672e2fda7c, type: 3}
+      propertyPath: m_text
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6216710415694158625, guid: a419d27ab3f522742a3dd9672e2fda7c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -2453,7 +2465,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6216710415003856950}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1595837acb95d42e8bd82f8cc418fce5, type: 3}
+  m_Script: {fileID: 11500000, guid: 13f700f5981c3456d926cede9617a20c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _powerIncrease: 1.5

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// Handles Muffins Per Second Upgrades
+/// </summary>
 public class MPSUpgradeButton : UpgradeButton
 {
     private int _mpsUpgradeCost = 5;

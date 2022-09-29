@@ -2,9 +2,9 @@ using UnityEngine;
 using TMPro;
 
 /// <summary>
-/// Handles on click events for the Upgrade Button
+/// Base class that handles on click events for Upgrade Buttons
 /// </summary>
-public class UpgradeButton : MonoBehaviour
+public abstract class UpgradeButton : MonoBehaviour
 {
     private int _currentUpgradeCost = 5;
     private int _currentLevel = 1;
