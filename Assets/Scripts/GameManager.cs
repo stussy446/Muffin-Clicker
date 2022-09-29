@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
     public int AddMuffins()
     {
         int addedMuffins = 0;
-        int randomNum = Random.Range(1, 100);
+        int randomNum = (int)Random.Range(1f, 100f);
 
         if (randomNum <= _criticalPercentChance)
         {
@@ -94,7 +94,6 @@ public class GameManager : MonoBehaviour
         TotalMuffins -= upgradeCost;
         if (TotalMuffins < 0) { TotalMuffins = 0; }
         OnTotalMuffinsChanged?.Invoke(TotalMuffins);
-
     }
 
     private void CheckForDoubleOrDivide()
@@ -102,16 +101,13 @@ public class GameManager : MonoBehaviour
         if (_fancyMuffinButton.DoubleClicks)
         {
             TotalMuffins *= 2;
-            Debug.Log($"DoubleClicks is true so TotalMuffins is multiplied and is {TotalMuffins}");
-
         }
         else
         {
             TotalMuffins = Mathf.RoundToInt(TotalMuffins / 2);
-            Debug.Log($"DoubleClicks is false so TotalMuffins is divided and is {TotalMuffins}");
         }
-        OnTotalMuffinsChanged?.Invoke(TotalMuffins);
 
+        OnTotalMuffinsChanged?.Invoke(TotalMuffins);
     }
 
     private void AddMuffinsPerSecond()
