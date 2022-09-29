@@ -2,14 +2,15 @@ using UnityEngine;
 using TMPro;
 
 /// <summary>
-/// Handles on click events for the Upgrade Button
+/// Base class that handles on click events for Upgrade Buttons
 /// </summary>
-public class UpgradeButton : MonoBehaviour
+public abstract class UpgradeButton : MonoBehaviour
 {
     private int _currentUpgradeCost = 5;
     private int _currentLevel = 1;
     private int _upgradeCostIncrease;
 
+    [SerializeField] private UpgradeType _upgradeType;
     [SerializeField] private float _powerIncrease;
     [SerializeField] private TextMeshProUGUI _levelText;
     [SerializeField] private TextMeshProUGUI _priceText;
@@ -21,6 +22,7 @@ public class UpgradeButton : MonoBehaviour
     public virtual float PowerIncrease { get => _powerIncrease;}
     public virtual TextMeshProUGUI LevelText { get => _levelText; set => _levelText = value; }
     public virtual TextMeshProUGUI PriceText { get => _priceText; set => _priceText = value; }
+    public virtual UpgradeType UpgradeType { get => _upgradeType; }
 
 
     void Start()
@@ -37,13 +39,9 @@ public class UpgradeButton : MonoBehaviour
         if (_gameManager.TotalMuffins >= CurrentUpgradeCost)
         {
             CurrentLevel++;
-            GameManager.ApplyMuffinsPerClickUpgrade(CurrentUpgradeCost, CurrentLevel);
+            GameManager.ApplyUpgrade(CurrentUpgradeCost, CurrentLevel, UpgradeType);
             CurrentUpgradeCost += Mathf.RoundToInt(Mathf.Pow(CurrentLevel - 1, PowerIncrease));
             SetUpgradeText();
-        }
-        else
-        {
-            Debug.Log("not enough points");
         }
     }
 
