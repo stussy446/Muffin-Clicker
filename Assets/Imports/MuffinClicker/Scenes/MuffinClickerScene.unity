@@ -970,6 +970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d76b5b606817949bf8d94506bd1cd73d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _upgradeType: 1
   _powerIncrease: 1.5
   _levelText: {fileID: 246208435}
   _priceText: {fileID: 1758458587}
@@ -1529,6 +1530,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _criticalPercentChance: 1
+  _upgradeType: 0
 --- !u!4 &1622514172
 Transform:
   m_ObjectHideFlags: 0
@@ -2468,6 +2470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13f700f5981c3456d926cede9617a20c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _upgradeType: 0
   _powerIncrease: 1.5
   _levelText: {fileID: 6216710415003856949}
   _priceText: {fileID: 6216710415003856948}

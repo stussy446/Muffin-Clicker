@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
 
     [Range(0, 100)]
     [SerializeField] private int _criticalPercentChance = 1;
+    [SerializeField] private UpgradeType _upgradeType;
 
     public int TotalMuffins
     {
@@ -79,6 +80,23 @@ public class GameManager : MonoBehaviour
         TotalMuffins -= currentUpgradeCost;
         MuffinsPerSecond = currentLevel;
         OnMuffinsPerSecondChanged?.Invoke(MuffinsPerSecond);
+    }
+
+    public void ApplyUpgrade(int currentUpgradeCost, int currentLevel, UpgradeType upgradeType)
+    {
+        TotalMuffins -= currentUpgradeCost;
+        switch (upgradeType)
+        {
+            case UpgradeType.MuffinUpgrade:
+                MuffinsPerClick = currentLevel;
+                break;
+            case UpgradeType.SugarRushUpgrade:
+                MuffinsPerSecond = currentLevel;
+                OnMuffinsPerSecondChanged?.Invoke(MuffinsPerSecond);
+                break;
+            default:
+                break;
+        }
     }
 
     private void AddMuffinsPerSecond()

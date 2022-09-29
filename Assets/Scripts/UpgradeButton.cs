@@ -10,6 +10,7 @@ public abstract class UpgradeButton : MonoBehaviour
     private int _currentLevel = 1;
     private int _upgradeCostIncrease;
 
+    [SerializeField] private UpgradeType _upgradeType;
     [SerializeField] private float _powerIncrease;
     [SerializeField] private TextMeshProUGUI _levelText;
     [SerializeField] private TextMeshProUGUI _priceText;
@@ -21,6 +22,7 @@ public abstract class UpgradeButton : MonoBehaviour
     public virtual float PowerIncrease { get => _powerIncrease;}
     public virtual TextMeshProUGUI LevelText { get => _levelText; set => _levelText = value; }
     public virtual TextMeshProUGUI PriceText { get => _priceText; set => _priceText = value; }
+    public virtual UpgradeType UpgradeType { get => _upgradeType; }
 
 
     void Start()
@@ -37,13 +39,9 @@ public abstract class UpgradeButton : MonoBehaviour
         if (_gameManager.TotalMuffins >= CurrentUpgradeCost)
         {
             CurrentLevel++;
-            GameManager.ApplyMuffinsPerClickUpgrade(CurrentUpgradeCost, CurrentLevel);
+            GameManager.ApplyUpgrade(CurrentUpgradeCost, CurrentLevel, UpgradeType);
             CurrentUpgradeCost += Mathf.RoundToInt(Mathf.Pow(CurrentLevel - 1, PowerIncrease));
             SetUpgradeText();
-        }
-        else
-        {
-            Debug.Log("not enough points");
         }
     }
 

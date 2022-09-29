@@ -12,15 +12,4 @@ public class MPCUpgradeButton : UpgradeButton
 
     public override int CurrentUpgradeCost { get => _mpcUpgradeCost; set => _mpcUpgradeCost = value; }
     public override int CurrentLevel { get => _mpcLevel; set => _mpcLevel = value; }
-
-    public override void PurchaseUpgrade()
-    {
-        if (GameManager.TotalMuffins >= CurrentUpgradeCost)
-        {
-            CurrentLevel++;
-            GameManager.ApplyMuffinsPerClickUpgrade(CurrentUpgradeCost, CurrentLevel);
-            CurrentUpgradeCost += Mathf.RoundToInt(Mathf.Pow(CurrentLevel - 1, PowerIncrease));
-            SetUpgradeText();
-        }
-    }
 }
